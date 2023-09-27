@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'sans-serif';
+  color: var(--white);
+  transition: all 0.2s ease;
+}
+
+:root {
+  --black-blue: #b9a2a2;
+  --dark-blue: rgb(207, 192, 192);
+  --blue: #dd9b9b;
+  --light-blue: #db7365;
+  --white: #e7f2ff;
+}
+
+ion-icon {
+  font-size: 18px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  padding: 1rem;
+  background: var(--black-blue);
+}
+
+input {
+  padding: .9rem;
+  border: none;
+  border-radius: 6px;
+  color: var(--black-blue);
+  outline: solid 2px var(--blue);
+  background: var(--white);
+}
+
+input:focus {
+  color: #000000;
+  outline: solid 2px var(--light-blue);
+  box-shadow: 0px 6px 0px 0px var(--light-blue);
+}
+
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: .5rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--light-blue);
+}
+button:hover {
+  background: transparent;
+  color: #000000;
+  outline: solid 2px var(--light-blue);
+}
+
+.card-addTask {  
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--dark-blue);
+}
+.card-addTask input {
+  width: 100%;
+}
+
+.card-tasks {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+
+.list-task {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 12px;
+  background: var(--blue);
+}
+.list-task:hover {
+  outline: solid 2px var(--light-blue);
+  box-shadow: 0px 6px 0px 0px var(--light-blue);
+}
+.list-task.checked {
+  filter: brightness(0.5);
+}
+
+.list-task button {
+  position: absolute;
+  padding: .5rem;
+  right: 1rem;
+}
+
+@keyframes deletePop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.list-task.delete {
+  animation: deletePop 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
